@@ -84,6 +84,20 @@ No environment variables are required.
 - `dist/` and `node_modules/` are git-ignored; Vercel builds them during deploy.
 - Prefers-reduced-motion is respected by the scroll and pointer animations.
 
+## Troubleshooting
+
+**`Failed to load PostCSS config ... Invalid PostCSS Plugin found`**
+
+Older copies of this project could pick up a `postcss.config.*` file from a *parent* folder (for example a Tailwind config next to the project). `vite.config.js` now pins an empty inline PostCSS config so Vite never searches outside the project. If you still see this, update to the latest `main`.
+
+**Port already in use**
+
+The dev server uses port `4321` but will fall back to the next free port. Check the URL Vite prints. To force a different port: `npm run dev -- --port 5173`.
+
+**Blank page after opening `dist/index.html` directly**
+
+The build uses relative paths, but some browsers block ES modules loaded from `file://`. Use `npm run preview` (or any static server) instead of opening the file directly.
+
 ## License
 
 Private project — all rights reserved.
