@@ -11,24 +11,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 const TEAM_MEMBERS = [
   {
-    name: "Kavindu Perera",
-    note: "this is Kavindu — he built the box it all runs on",
+    name: "Damsith",
+    note: "this is Damsith — he turns ideas into working code",
   },
   {
-    name: "Senuri Jayawardena",
-    note: "Senuri — the AI that catches you up when you miss a week",
+    name: "Saseni",
+    note: "Saseni — she built this site and every screen on it",
   },
   {
-    name: "Dinuka Samarasinghe",
-    note: "and Dinuka — he keeps every record honest",
+    name: "Sanuth",
+    note: "Sanuth — our leader, and the bridge to the hardware",
   },
   {
-    name: "Oshadhi Fernando",
-    note: "Oshadhi — the dashboard lecturers actually open",
+    name: "Tharushi",
+    note: "Tharushi — the mind training the AI to help you catch up",
   },
   {
-    name: "Thisara Bandara",
-    note: "Thisara — the app in your pocket",
+    name: "Sasith",
+    note: "Sasith — he puts Attesta in your pocket",
   },
 ];
 
@@ -42,7 +42,7 @@ export function initTeam({ reduce = false } = {}) {
   const noteText = container.querySelector("[data-note-text]");
   const photoWrapper = container.querySelector(".team-group");
 
-  let activeIndex = 2; // Default to Dinuka (Center)
+  let activeIndex = 2; // Default to Sanuth (Center)
 
   /* Keep the hand-drawn note centred over the active figure while
      clamping it inside the group so it never spills off-stage. */
@@ -109,7 +109,7 @@ export function initTeam({ reduce = false } = {}) {
     btn.addEventListener("click", () => updateActive(i, true));
   });
 
-  // Initialize with the centre figure (Dinuka)
+  // Initialize with the centre figure (Sanuth)
   updateActive(2, false);
 
   // Keep the annotation aligned through resizes and late image loads
